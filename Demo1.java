@@ -30,7 +30,7 @@ class Demo1{
 
 public static void main(String args[])
     {
-        Random r = new Random();
+        Random r = new Random();//will be used for generating random number
         InsertionSort ob = new InsertionSort();
 		
         int size = 10000;
@@ -43,13 +43,14 @@ public static void main(String args[])
       	for(int i =0;  i<30; i++ ){
 			int arr[] = new int [size];
 			
+			//intiaialization of array
 			for(int j =0; j<size; j++){
                 arr[j] = r.nextInt(size);
             } 
            
 			int right = arr.length -1;
 			
-            startTime = System.nanoTime();
+            startTime = System.nanoTime();//used to measure time in ns
             int result = ob.sort(arr);
             endTime = System.nanoTime();
            
@@ -59,7 +60,7 @@ public static void main(String args[])
             
            
           
-            size+=10000;
+            size+=10000;//repeat the process next time with set of 10000 numbers more
 			
         }
     }
